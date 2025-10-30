@@ -1,21 +1,23 @@
-# Data Visualization for Public APIs
+# Data Visualization for Public APIs - Crypto Edition
 
-Live dashboard showcasing cryptocurrency price data using the CoinGecko public API.  
-Deploy instantly on Render Static Sites.
+Interactive crypto price dashboard powered by CoinGecko API.  
+Features dark mode, chart type selection, error handling, and responsive design.  
+Deployed as a static site on Render Cloud.
 
 ## Features
 
-- Selectable cryptocurrencies
-- 15-day price history
-- Interactive charts with Chart.js
-- Responsive UI
-- Cloud-ready, no backend required
+- Select Bitcoin, Ethereum, or Dogecoin
+- Choose chart type: line, bar, pie
+- Toggle dark/light mode
+- Loading and error feedback
+- Mobile responsive UI
 
 ## How to Deploy
 
-1. Push this folder to your GitHub account.
-2. On Render, create a new Static Site, link the repo, and set publish directory to root.
+1. Push to GitHub
+2. Create Render Static Site linked to repo with publish directory as `/`
 3. Enjoy your live dashboard!
 
 ## Author
-[Your Name]
+
+Chaitanya

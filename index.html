@@ -1,80 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Price Visualization | Cloud Dashboard</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <!-- Chart.js CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crypto Price Visualization | Cloud Dashboard</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">DataViz Cloud</div>
-            <ul class="nav-links">
-                <li><a href="#dashboard">Dashboard</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav class="container">
+      <div class="logo">DataViz Cloud</div>
+      <ul class="nav-links">
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
+      </ul>
+      <button id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+  </header>
 
-    <main>
-        <section id="dashboard" class="hero">
-            <div class="container">
-                <h1>Crypto Price Dashboard</h1>
-                <p class="subtitle">Fetch and visualize real-time crypto price data using CoinGecko Public API.</p>
-                <div class="controls">
-                    <label for="coin">Select Coin:</label>
-                    <select id="coin">
-                        <option value="bitcoin">Bitcoin</option>
-                        <option value="ethereum">Ethereum</option>
-                        <option value="dogecoin">Dogecoin</option>
-                    </select>
-                    <button id="fetchData" class="btn btn-primary">Fetch Data</button>
-                </div>
-                <canvas id="priceChart"></canvas>
-            </div>
-        </section>
+  <main>
+    <section id="dashboard" class="hero container">
+      <h1>Crypto Price Dashboard</h1>
+      <p class="subtitle">
+        Fetch and visualize real-time crypto price data using CoinGecko Public API.
+      </p>
 
-        <section id="about">
-            <div class="container">
-                <h2 class="section-title">About This Project</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>This dashboard demonstrates cloud-first development, leveraging live, open APIs for instant data analysis and visualization.</p>
-                        <p>The entire app runs serverlessly—just deploy and update as needed! Easily extend to other data sources such as weather, COVID stats, or stock prices.</p>
-                        <p>Built for engineering students looking to showcase modern cloud and web skills in their portfolio.</p>
-                    </div>
-                    <div class="about-image">📊</div>
-                </div>
-            </div>
-        </section>
+      <div class="controls">
+        <label for="coin">Select Coin:</label>
+        <select id="coin">
+          <option value="bitcoin">Bitcoin</option>
+          <option value="ethereum">Ethereum</option>
+          <option value="dogecoin">Dogecoin</option>
+        </select>
 
-        <section id="contact">
-            <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <p>Questions or feedback? Connect below:</p>
-                        <div class="social-links">
-                            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-                            <a href="mailto:your.email@example.com">Email</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+        <label for="chartType">Chart Type:</label>
+        <select id="chartType">
+          <option value="line">Line</option>
+          <option value="bar">Bar</option>
+          <option value="pie">Pie</option>
+        </select>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 [Your Name]. Deployed on Render Cloud.</p>
+        <button id="fetchData" class="btn btn-primary">Fetch Data</button>
+      </div>
+
+      <div id="loading" aria-live="polite" class="loading" hidden>Loading data...</div>
+      <div id="error" class="error-message" role="alert" hidden></div>
+
+      <canvas id="priceChart" aria-label="Cryptocurrency price chart"></canvas>
+    </section>
+
+    <section id="about" class="container">
+      <h2 class="section-title">About This Project</h2>
+      <div class="about-content">
+        <p>
+          This dashboard fetches live cryptocurrency price data from CoinGecko API and visualizes
+          it with multiple chart types. Features include dark mode, error handling, and
+          performance optimizations. A cloud-ready web app for showcasing API integration and
+          interactive charting.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div>
+        <p>Questions or feedback? Connect below:</p>
+        <div class="social-links">
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:your.email@example.com">Email</a>
         </div>
-    </footer>
+      </div>
+    </section>
+  </main>
 
-    <script src="assets/js/main.js"></script>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 [Your Name]. Deployed on Render Cloud.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
